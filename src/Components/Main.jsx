@@ -6,12 +6,12 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 const Main = () => {
-    const [pokeData,setPokeData]=useState([]);
-    const [loading,setLoading]=useState(true);
-    const [url,setUrl]=useState("https://pokeapi.co/api/v2/pokemon/")
-    const [nextUrl,setNextUrl]=useState();
-    const [prevUrl,setPrevUrl]=useState();
-    const [pokeDex,setPokeDex]=useState();
+    const [pokeData,setPokeData] = useState([]);
+    const [loading,setLoading] = useState(true);
+    const [url,setUrl] = useState("https://pokeapi.co/api/v2/pokemon/")
+    const [nextUrl,setNextUrl] = useState();
+    const [prevUrl,setPrevUrl] = useState();
+    const [pokeDex,setPokeDex] = useState();
 
     const pokeFun = async() => {
         setLoading(true)
@@ -41,12 +41,12 @@ const Main = () => {
                     <Card pokemon={pokeData} loading={loading} infoPokemon={poke=>setPokeDex(poke)}/>
                     
                     <div className="btn-group">
-                        {  prevUrl && <button onClick={()=>{
+                        {  prevUrl && <button onClick={ () => {
                             setPokeData([])
                            setUrl(prevUrl) 
                         }}>Previous</button>}
 
-                        { nextUrl && <button onClick={()=>{
+                        { nextUrl && <button onClick={ ()=> {
                             setPokeData([])
                             setUrl(nextUrl)
                         }}>Next</button>}
